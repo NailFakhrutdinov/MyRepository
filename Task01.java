@@ -3,6 +3,7 @@ import java.util.regex.Pattern;
 //
 public class Task01 {
 	public static void main(String args []) {
+	
 		//Tests toCheckNumbers()
 		System.out.println(toCheckNumbers("+ 7 (843) 213-324-21421"));
 		System.out.println(toCheckNumbers(" 7 (843) 213-324-21421"));

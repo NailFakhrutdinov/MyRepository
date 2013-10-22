@@ -46,7 +46,7 @@ public class BD_Utils {
 		}
 		else {
 			while(rs.next()) {
-				list.add(new Record(rs.getString(1)+" ("+rs.getString(2)+")",Float.parseFloat(rs.getString(3))));
+				list.add(new Record(rs.getString(1)+" ("+rs.getString(2)+")",Float.parseFloat(rs.getString(3))/2));
 			}
 		}
 	}

@@ -27,7 +27,7 @@ public class Task09 extends JFrame {
 	private final Pattern PASSWORD_CHECK;
 	private static Gender gender = Gender.NotSelected;
 
-	public Task06() {
+	public Task09() {
 		super("authorization");
 		login = "";
 		password = "";
@@ -54,6 +54,10 @@ public class Task09 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String login = tfLogin.getText();
 				if (LOGIN_CHECK.matcher(login).matches()) {
+					File file1 = new File("src/users");
+					if(!file1.exists()) {
+						file1.mkdir();
+					}
 					File file = new File("src/users/" + login + ".txt");
 					if (file.exists()) {
 						lblOutputOne.setText("login already exists");

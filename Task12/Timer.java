@@ -43,7 +43,7 @@ public class Timer {
 				if(Flag.getStopFlag()) {
 					break;
 				}
-				Thread.sleep(10);
+				Thread.sleep(1000);
 				plusPlus(time);
 				show(time);
 				i++;

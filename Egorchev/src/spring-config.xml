@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Calculator-->
+    <bean id="calculator" class="com.kpfu.itis.calculator.Calculator">
+        <property name="operation" ref="mul"/>
+        <property name="writer" ref="file"/>
+    </bean>
+    <!--OPERATIONS-->
+    <bean id="add" class="com.kpfu.itis.calculator.dependency.operation.impl.Add"/>
+    <bean id="sub" class="com.kpfu.itis.calculator.dependency.operation.impl.Substraction"/>
+    <bean id="div" class="com.kpfu.itis.calculator.dependency.operation.impl.Division"/>
+    <bean id="mul" class="com.kpfu.itis.calculator.dependency.operation.impl.Multiply"/>
+
+    <!-- WRITERS-->
+    <bean id="console" class="com.kpfu.itis.calculator.dependency.writer.impl.ConsoleWriter"/>
+    <bean id="file" class="com.kpfu.itis.calculator.dependency.writer.impl.FileWriter"/>
+
+
+    <!--Student-->
+
+    <bean id="student" class="com.kpfu.itis.student.Student">
+        <property name="talent" ref="song"/>
+        <property name="mood" ref="positive"/>
+    </bean>
+    <!--Talents-->
+    <bean id="song" class="com.kpfu.itis.student.dependency.talent.impl.Song"/>
+    <bean id="dance" class="com.kpfu.itis.student.dependency.talent.impl.Dance"/>
+
+    <!--Mood-->
+    <bean id="positive" class="com.kpfu.itis.student.dependency.mood.impl.Positive"/>
+    <bean id="negative" class="com.kpfu.itis.student.dependency.mood.impl.Negative"/>
+
+</beans>
